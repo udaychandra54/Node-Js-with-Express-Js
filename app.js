@@ -1,23 +1,22 @@
-
+const path= require('path');
 const express= require('express');
+const adminRouter= require('./Routes/admin');
+const shopRouter = require('./Routes/shop');
 
 const app= express();
-app.use(express.json())
+app.use(express.urlencoded({extended:true}));
+app.use(express.static(path.join(__dirname,'public')))
+app.use('/admin',adminRouter);
+app.use(shopRouter);
 
-app.use('/add-product',(req,res,next)=>{
-   
-    res.send("<form action='/product' method='post'><input type='text'><button type='submit'>Add product</button></form>");
+
+app.use('/*',(req,res)=>{
+    res.status(404).sendFile(path.join(__dirname,'./','views','page-not-found.html'));
+
 })
 
-app.use('/product',(req,res,next)=>{
-    console.log(req.body);
-    res.redirect('/');
-})
 
-app.use('/',(req,res,next)=>{
-  
-   res.send("<h1>Hello from Express</h1>")
-})
+
 
 
 

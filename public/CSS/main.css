@@ -1,0 +1,34 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+.main-header{
+    width: 100%;
+    height: 3.75rem;
+    background-color: #ddc03fde;
+    padding: 0 1.5rem;
+}
+.main-header_item-list{
+    margin: 0;
+    list-style: none;
+    display: flex;
+}
+.main-header_item{
+    margin: 0 1rem;
+    padding: 0;
+}
+.main-header_item a{
+    text-decoration: none;
+    color: white;
+}
+.main-header__nav{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.main-header_item a:hover,
+.main-header_item a:active,
+.main-header_item a.active{
+  color: #320be2f1;
+}
