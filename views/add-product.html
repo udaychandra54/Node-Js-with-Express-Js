@@ -1,97 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add Product</title>
-    <style>
-        body{
-            padding: 0px;
-            margin: 0px;
-            font-family: sans-serif;
-        }
-        .main-header{
-            width: 100%;
-            height: 3.75rem;
-            background-color: #ddc03fde;
-            padding: 0 1.5rem;
-        }
-        .main-header_item-list{
-            margin: 0;
-            list-style: none;
-            display: flex;
-        }
-        .main-header_item{
-            margin: 0 1rem;
-            padding: 0;
-        }
-        .main-header_item a{
-            text-decoration: none;
-            color: white;
-        }
-      .main-header__nav{
-          height: 100%;
-          display: flex;
-          align-items: center;
-      }
-      .main-header_item a:hover,
-      .main-header_item a:active,
-      .main-header_item a.active{
-          color: #320be2f1;
-      }
-      .main-container
-      {
-          margin: 5px;
-          padding: 5px;
-      }
-      .form-control{
-          margin: 1rem 0;
-      }
-     
-      .form-control input,
-      .form-control input:active{
-          font: inherit;
-          border-radius: 2px;
-          border: solid 2px #ddc03fde;
-      }
-      button{
-          color: #320be2f1;
-          border: solid 2px #320be2f1;
-          background-color: white;
-          cursor: pointer;
-          padding: 5px;
-      }
-    button:hover{
-        color: white;
-        background-color: #320be2f1;
-    }
-    .product-form{
-        text-align: center;
-    }
-    </style>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/product.css">
 </head>
+
 <body>
     <header class="main-header">
         <nav class="main-header__nav">
-            <ul class="main-header_item-list">
-                <li class="main-header_item"><a href="/">Shop</a></li>
-                <li class="main-header_item"><a class="active" href="/admin/add-product">Add Product</a></li>
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a href="/">Shop</a></li>
+                <li class="main-header__item"><a class="active" href="/admin/add-product">Add Product</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <div class="main-container">
-            <form class="product-form" action="/admin/add-product" method="post">
-                <div class="form-control">
-                    <label for="title">Title</label>
-                    <input type="text" name="title" id="title">
-                </div>
-                
-                <button type="submit">Add Product</button>
-            </form>
-        </div>
-       
+        <form class="product-form" action="/admin/add-product" method="POST">
+            <div class="form-control">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title">
+            </div>
+
+            <button class="btn" type="submit">Add Product</button>
+        </form>
     </main>
 </body>
+
 </html>
